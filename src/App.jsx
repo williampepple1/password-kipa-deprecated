@@ -1,10 +1,27 @@
 import './App.css'
-import {useAuthState} from 'react-firebase-hooks/auth'
+import {auth} from './firebase'
+import {useAuthState} from 'react-firebase-hooks/auth' 
+import Login from './pages/Login'
 
 export default function App() {
+  const [user, loading] = useAuthState(auth)
+
+  if (loading) {
+    return(
+      <div>
+        hey
+      </div>
+    )
+  }
+
   return (
-    <h1 className="text-3xl font-bold underline text-red-300">
-      Hello world!
-    </h1>
+    <div>
+      {!user ? (<Login />) : (
+
+        <div>
+          Hey
+        </div>
+      )}
+    </div>
   )
 }
