@@ -2,6 +2,7 @@ import './App.css'
 import {auth} from './firebase'
 import {useAuthState} from 'react-firebase-hooks/auth' 
 import Login from './pages/Login'
+import Homepage from './pages/Homepage'
 
 export default function App() {
   const [user, loading] = useAuthState(auth)
@@ -18,9 +19,7 @@ export default function App() {
     <div>
       {!user ? (<Login />) : (
 
-        <div>
-          Hey
-        </div>
+       <Homepage />
       )}
     </div>
   )
