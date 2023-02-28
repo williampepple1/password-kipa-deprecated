@@ -442,7 +442,7 @@ export default function Homepage() {
             </div>
             {/* Pinned projects */}
             <div className="mt-6 px-4 sm:px-6 lg:px-8">
-              <h2 className="text-sm font-medium text-gray-900">Passwords</h2>
+              <h2 className="text-sm font-medium text-gray-900">Pinned Passwords</h2>
               <ul role="list" className="mt-3 grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6 xl:grid-cols-4">
                 {pinnedProjects.map((project) => (
                   <li key={project.id} className="relative col-span-1 flex rounded-md shadow-sm">
@@ -530,7 +530,7 @@ export default function Homepage() {
 
             <div className="mt-10 sm:hidden">
               <div className="px-4 sm:px-6">
-                <h2 className="text-sm font-medium text-gray-900">Pinned Passwords</h2>
+                <h2 className="text-sm font-medium text-gray-900">Passwords</h2>
               </div>
               <ul role="list" className="mt-3 divide-y divide-gray-100 border-t border-gray-200">
                 {projects.map((project) => (
@@ -565,7 +565,7 @@ export default function Homepage() {
                         className="border-b border-gray-200 bg-gray-50 px-6 py-3 text-left text-sm font-semibold text-gray-900"
                         scope="col"
                       >
-                        <span className="lg:pl-2">Password</span>
+                        <span className="lg:pl-2">Passwords</span>
                       </th>
                       <th
                         className="border-b border-gray-200 bg-gray-50 px-6 py-3 text-left text-sm font-semibold text-gray-900"
