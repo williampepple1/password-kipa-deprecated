@@ -246,8 +246,7 @@ export default function Login() {
                   Password Keeper
                 </h1>
                 <p className="mt-6 text-lg leading-8 text-gray-300">
-                  Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt
-                  amet fugiat veniam occaecat fugiat aliqua.
+                  Store your passwords safely without the fear of it being exposed.
                 </p>
                 <div className="mt-10 flex items-center justify-center gap-x-6">
                   <a
@@ -256,9 +255,7 @@ export default function Login() {
                   >
                     Get started
                   </a>
-                  <a href="#" className="text-sm font-semibold leading-6 text-white">
-                    Live demo <span aria-hidden="true">→</span>
-                  </a>
+          
                 </div>
               </div>
             </div>
