@@ -3,15 +3,14 @@ import {auth} from './firebase'
 import {useAuthState} from 'react-firebase-hooks/auth' 
 import Login from './pages/Login'
 import Homepage from './pages/Homepage'
+import Spinner from 'react-spinkit'
 
 export default function App() {
   const [user, loading] = useAuthState(auth)
 
   if (loading) {
     return(
-      <div>
-        hey
-      </div>
+     <Spinner name='circle' color='blue'/>
     )
   }
 
