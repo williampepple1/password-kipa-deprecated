@@ -534,7 +534,7 @@ export default function Homepage() {
             {/* Projects list (only on smallest breakpoint) */}
             <div className="mt-10 sm:hidden">
               <div className="px-4 sm:px-6">
-                <h2 className="text-sm font-medium text-gray-900">Projects</h2>
+                <h2 className="text-sm font-medium text-gray-900">Passwords</h2>
               </div>
               <ul role="list" className="mt-3 divide-y divide-gray-100 border-t border-gray-200">
                 {projects.map((project) => (
