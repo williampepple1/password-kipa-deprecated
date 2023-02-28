@@ -9,14 +9,8 @@ import {
   MagnifyingGlassIcon,
 } from '@heroicons/react/20/solid'
 import { auth } from '../firebase'
-import { signOut, getAuth } from "firebase/auth";
-
-const userAuth = getAuth()
-
-const user = userAuth.currentUser
-
-console.log(user)
-
+import { signOut } from "firebase/auth";
+import {useAuthState} from 'react-firebase-hooks/auth'
 
 
 const navigation = [
@@ -80,17 +74,10 @@ export default function Homepage() {
     await signOut(auth);
   };
 
-
+  const [user] = useAuthState(auth) 
+  
   return (
     <>
-      {/*
-        This example requires updating your template:
-
-        ```
-        <html class="h-full bg-white">
-        <body class="h-full">
-        ```
-      */}
       <div className="min-h-full">
         <Transition.Root show={sidebarOpen} as={Fragment}>
           <Dialog as="div" className="relative z-40 lg:hidden" onClose={setSidebarOpen}>
