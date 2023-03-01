@@ -11,6 +11,9 @@ import {
 import { auth } from '../firebase'
 import { signOut } from "firebase/auth";
 import {useAuthState} from 'react-firebase-hooks/auth'
+import CreatePasswordModal from '../components/createPasswordModal'
+
+
 
 
 const navigation = [
@@ -76,20 +79,8 @@ const projects = [
         imageUrl:
           'https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
       },
-      {
-        name: 'Courtney Henry',
-        handle: 'courtneyhenry',
-        imageUrl:
-          'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-      },
-      {
-        name: 'Tom Cook',
-        handle: 'tomcook',
-        imageUrl:
-          'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-      },
     ],
-    totalMembers: 12,
+    totalMembers: 2,
     lastUpdated: 'March 17, 2020',
     pinned: false,
     bgColorClass: 'bg-pink-600',
@@ -103,11 +94,14 @@ function classNames(...classes) {
 
 export default function Homepage() {
   const [sidebarOpen, setSidebarOpen] = useState(false)
+  const [modalOpen, setModalOpen] = useState(false)
   const logout = async () => {
     await signOut(auth);
   };
 
-  const [user] = useAuthState(auth) 
+  const [user] = useAuthState(auth);
+
+
   
   return (
     <>
@@ -372,6 +366,11 @@ export default function Homepage() {
         {/* Main column */}
         <div className="flex flex-col lg:pl-64">
           {/* Search header */}
+
+          {modalOpen  ? (<CreatePasswordModal />) : <div></div>}
+
+          
+          
           <div className="sticky top-0 z-10 flex h-16 flex-shrink-0 border-b border-gray-200 bg-white lg:hidden">
             <button
               type="button"
@@ -471,6 +470,7 @@ export default function Homepage() {
                 <button
                   type="button"
                   className="order-0 inline-flex items-center rounded-md border border-transparent bg-purple-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 sm:order-1 sm:ml-3"
+                onClick = {() => setModalOpen(!modalOpen)}
                 >
                   Create
                 </button>
